@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RestAPI_DotNet.Service.Implementations;
+using RestAPI_DotNet.Service.Implementations.Implementations;
 
 namespace RestAPI_DotNet
 {
@@ -27,6 +29,7 @@ namespace RestAPI_DotNet
         {
 
             services.AddControllers();
+            services.AddScoped<IPersonService, PersonServiceImplementation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
