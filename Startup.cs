@@ -29,7 +29,11 @@ namespace RestAPI_DotNet
             var connection = Configuration["MySQLConnection:MySQLConnectionString"];
             var serverversion = new MySqlServerVersion(new System.Version(8, 0, 25));
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, serverversion));
+            
+            //Versioning API
+            services.AddApiVersioning();
 
+            //Dependecy Injection
             services.AddScoped<IPersonService, PersonServiceImplementation>();
         }
 
